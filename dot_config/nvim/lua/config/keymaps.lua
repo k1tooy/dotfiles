@@ -2,6 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true }) --switch between buffers
+vim.api.nvim_set_keymap("i", "C-c", "Esc", { noremap = true, silent = true }) --make Ctrl-c like Esc
 
 --disable arrow keys in normal mode
 vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", { noremap = true, silent = true })
