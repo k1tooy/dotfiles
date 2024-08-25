@@ -22,10 +22,11 @@ setopt HIST_FIND_NO_DUPS
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+source $ZSH/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 export PAGER='most'
 
@@ -324,22 +325,6 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
 
-#fixes
-alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias keyfix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias key-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias keys-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fixkey="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fixkeys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-key="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-keys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-#fix-sddm-config is no longer an alias but an application - part of ATT
-#alias fix-sddm-config="/usr/local/bin/arcolinux-fix-sddm-config"
-alias fix-pacman-conf="/usr/local/bin/arcolinux-fix-pacman-conf"
-alias fix-pacman-keyserver="/usr/local/bin/arcolinux-fix-pacman-gpg-conf"
-alias fix-grub="sudo /usr/local/bin/arcolinux-fix-grub"
-alias fixgrub="sudo /usr/local/bin/arcolinux-fix-grub"
-
 #maintenance
 alias big="expac -H M '%m\t%n' | sort -h | nl"
 alias downgrada="sudo downgrade --ala-url https://ant.seedhost.eu/arcolinux/"
@@ -366,9 +351,6 @@ alias xdw="ls /usr/share/wayland-sessions"
 #give a list of the kernels installed
 alias kernel="ls /usr/lib/modules"
 alias kernels="ls /usr/lib/modules"
-
-#am I on grub,systemd-boot or refind
-alias boot="sudo /usr/local/bin/arcolinux-boot"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
