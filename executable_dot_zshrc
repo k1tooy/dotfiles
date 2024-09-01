@@ -12,11 +12,15 @@ export HISTSIZE=10000
 # How many commands history will save on file.
 export SAVEHIST=10000
 
+# append history to zsh file
+setopt appendhistory
+
 # History won't save duplicates.
 setopt HIST_IGNORE_ALL_DUPS
 
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
+
 
 # Source plugins
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -43,7 +47,6 @@ export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR='nvim'
 export VISUAL='nvim'
-export MANPAGER=less
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -54,6 +57,9 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 ### ALIASES ###
+# fzf keybinds
+source <(fzf --zsh)
+alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
 
 #list
 alias ls='eza -l --color=auto --icons=auto'
